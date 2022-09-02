@@ -1,7 +1,9 @@
 
 var bookArrlist=JSON.parse(localStorage.getItem("book-list"))||[];
+
  var admited=JSON.parse(localStorage.getItem("admitted")) || [];
  var rejectted=JSON.parse(localStorage.getItem("rejected")) || [];
+
  console.log(bookArrlist);
    var bookcount=document.getElementById("book-count");
    bookcount.innerHTML=bookArrlist.length;
@@ -70,20 +72,28 @@ var bookArrlist=JSON.parse(localStorage.getItem("book-list"))||[];
         localStorage.setItem("rejected",JSON.stringify(rejectted));
     }
 
-    // function SortItems(){
-    //     var sorting=document.querySelector("#filter").value
-    //     console.log(sorting)
-        
-    //     if(sorting=="Fiction"){
-    //         bookArrlist.sort(function(a,b){
-    //         return b.-a.IMDB_Rating
-    //       })
-    //        display(moviesData)
-    //     }
-    //     else if(sorting=="l2h"){
-    //       moviesData.sort(function(a,b){
-    //         return a.IMDB_Rating-b.IMDB_Rating;
-    //       })
-    //        display(moviesData)
-    //     }
-    // }
+    document.getElementById("filter").addEventListener("change", function(){
+      let filt= document.getElementById("filter").value
+      if(filt == "Fiction"){
+          let ar  = bookArrlist.filter(function(i){
+            
+              return  i.Cat == "Fiction"
+        })
+        document.getElementById("body").innerHTML = ""
+        display(ar)
+      }
+      else if(filt == "Self Help"){
+          let ar  = bookArrlist.filter(function(i){
+              return  i.Cat == "Self Help"
+        })
+        document.getElementById("body").innerHTML = ""
+        display(ar)
+      }
+      else if(filt == "Finance"){
+          let ar  = bookArrlist.filter(function(i){
+              return  i.Cat == "Finance"
+        })
+        document.getElementById("body").innerHTML = ""
+        display(ar)
+      }
+  })
