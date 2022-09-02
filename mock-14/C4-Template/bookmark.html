@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <title>Web20-C4</title>
+</head>
+<style>
+  #navbar{
+display: flex;
+justify-content: space-between;
+border: 2px solid rgb(20, 0, 0);
+padding: 7px;
+background-color: rgb(231, 221, 227);
+box-shadow: 2px 2px 2px 2px rgb(155, 141, 141);
+}
+#subnav{
+display: flex;
+gap: 30px;
+}
+table{
+  border-collapse: collapse;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+th,
+td {
+  padding: 15px;
+}
+
+tr > th {
+  background-color: teal;
+  color: white;
+}
+</style>
+
+<body>
+  <div id="navbar">
+    <h2>Masai Library</h2>
+    <div id="subnav">
+      <a href="./index.html">
+        <h2>Home</h2>
+      </a>
+      <a href="./dashboard.html">
+        <h2>Dashboard</h2>
+      </a>
+      <a href="./buy.html">
+        <h2>My Books</h2>
+      </a>
+      <a href="./bookmark.html">
+        <h2>Bookmark</h2>
+      </a>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Added Date</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="tblbody">
+      <!-- Append your data here  -->
+    </tbody>
+  </table>
+</body>
+<script src="./Scripts/bookmark.js"></script>
+</html>
